@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  position: absolute;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.5);
+  width: 10px;
+}
+
+.element {
+  background: radial-gradient(circle at top left, #408a7e86 2%, #07070700 45%),
+    radial-gradient(circle at bottom right, #408a7e86 5%, #00000000 50%);
+}

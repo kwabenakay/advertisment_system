@@ -1,0 +1,13 @@
+<button
+  class="btn w-full px-4 py-1 rounded flex justify-center gap-4 items-center"
+  [class]="
+    type === 'primary'
+      ? 'text-white bg-primary'
+      : ' bg-white text-primary border-2 border-primary'
+  "
+>
+  @if (tooltip) {
+  <span class="tooltip text-xs">{{ tooltip }}</span>
+  }
+  <ng-content></ng-content>
+</button>

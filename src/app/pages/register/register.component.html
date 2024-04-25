@@ -1,0 +1,82 @@
+<div class="element h-screen w-screen grid place-items-center">
+  <form class="flex flex-col gap-6" [formGroup]="registerForm">
+    <img
+      src="./../assets/svg/megaphone.svg"
+      alt="personalised"
+      class="mx-auto mb-10"
+    />
+    <div class="flex gap-20">
+      <div class="w-80 self-end grid grid-rows-2">
+        <label
+          class="grid place-items-center rounded-md relative mx-auto px-10 max-h-60 max-w-60 overflow-clip"
+          for="profile"
+        >
+          <input
+            id="profile"
+            name="profile"
+            type="file"
+            accept="image/*"
+            (change)="onFileChange($event)"
+            class="hidden"
+          />
+          <img
+            src="./../../../assets/svg/edit.svg"
+            class="absolute right-10 bottom-5"
+            alt="."
+          />
+          <img
+            [src]="
+              image ? image : './../../../assets/images/default-profile.png'
+            "
+            class="h-full w-full rounded-md"
+            alt=""
+          />
+        </label>
+        <div>
+          <app-input
+            [isError]="emailError"
+            name="email"
+            label="Email"
+            [form]="registerForm"
+          />
+          <app-input
+            name="phoneNumber"
+            label="Phone Number"
+            [form]="registerForm"
+          />
+        </div>
+      </div>
+      <div class="w-80">
+        <app-input
+          [isError]="firstNameError"
+          name="firstName"
+          label="First Name"
+          [form]="registerForm"
+        />
+        <app-input
+          [isError]="lastNameError"
+          name="lastName"
+          label="Last Name"
+          [form]="registerForm"
+        />
+        <app-input
+          [isError]="passwordError"
+          name="password"
+          label="Password"
+          [form]="registerForm"
+        />
+        <app-input
+          [isError]="isRepeatPasswordError()"
+          name="repeatPassword"
+          label="Repeat Password"
+          [form]="registerForm"
+        />
+      </div>
+    </div>
+    <div class="w-1/2 self-center">
+      <app-button (click)="handleClick()" (keydown)="handleClick()" class="mt-5"
+        >Login</app-button
+      >
+    </div>
+  </form>
+</div>

@@ -1,0 +1,39 @@
+<div class="bg-primary h-screen w-fit p-5 flex flex-col justify-between">
+  <div class="h-1/2 flex flex-col justify-between">
+    <a routerLink="/landing"><app-campaign-logo class="text-white" /></a>
+    <div class="h-2/3 flex flex-col justify-evenly items-center">
+      <a
+        class="text-white w-10 h-10 grid place-items-center"
+        routerLink="/auth/home"
+        routerLinkActive=" border border-white rounded-l-full bg-white active-icon"
+        ><app-home-logo
+      /></a>
+      <a
+        class="text-white w-10 h-10 grid place-items-center"
+        routerLink="/auth/contacts"
+        routerLinkActive=" border border-white rounded-l-full bg-white active-icon"
+        ><app-contacts-logo
+      /></a>
+      <a
+        class="text-white w-10 h-10 grid place-items-center"
+        routerLink="/auth/chats"
+        routerLinkActive=" border border-white rounded-l-full bg-white active-icon"
+        ><app-conversation-logo
+      /></a>
+      <a
+        class="text-white w-10 h-10 grid place-items-center"
+        routerLink="/auth/campaign"
+        routerLinkActive=" border border-white rounded-l-full bg-white active-icon"
+        ><app-campaign-logo
+      /></a>
+    </div>
+  </div>
+
+  <div class="h-1/4 flex flex-col justify-between items-center">
+    <div class="h-[1px] w-full bg-white"></div>
+    <div class="h-2/3 flex flex-col justify-evenly">
+      <app-support-logo />
+      <app-settings-logo />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="relative" [formGroup]="form">
+  @if (label) {
+  <label
+    [for]="name"
+    class="{{ isError ? 'text-red-400' : 'text-text-primary' }}"
+  >
+    {{ label }}
+  </label>
+  }
+  <div
+    class="border-2 {{
+      isError ? 'border-red-200' : 'border-primary'
+    }} rounded-md flex justify-between items-center px-2 py-1 mt-2 z-20"
+  >
+    <input
+      #input
+      [type]="
+        name === 'password' || name === 'repeatPassword' ? 'password' : 'text'
+      "
+      [placeholder]="placeholder"
+      class="outline-none text-primary bg-transparent w-full"
+      [name]="name"
+      [formControlName]="name"
+    />
+    @if (options.length > 0) {
+    <app-dropdown-logo
+      (click)="toggleDropdown()"
+      (keydown)="toggleDropdown()"
+      tabindex="0"
+    />
+    }
+  </div>
+  @if (isDropdown) {
+  <div
+    class="absolute pt-2 -mt-1 w-full border-2 border-primary rounded-b-md border-t-0 overflow-clip"
+  >
+    <div class="bg-white pt-2 -mt-1">
+      @for (option of options; track option) {
+      <button
+        (click)="handleSelection(option)"
+        (keydown)="handleSelection(option)"
+        class="py-2 pl-1 mx-4 border-b"
+      >
+        {{ option }}
+      </button>
+      }
+    </div>
+  </div>
+  }
+</div>

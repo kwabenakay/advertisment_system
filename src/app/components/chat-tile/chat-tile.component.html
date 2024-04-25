@@ -1,0 +1,21 @@
+<div class="flex justify-between px-10 py-4 hover:bg-blue-100 " [class]="isActive?'bg-blue-300':''">
+  <div class="flex gap-5">
+    <img
+      [src]="src || './../../../assets/images/default-profile.png'"
+      alt="profile"
+      class="h-12 w-12 rounded-full"
+    />
+    <div>
+      <h2 class="font-semibold">{{ chat.name }}</h2>
+      <p class="text-text-primary">{{ chat.lastMessage }}</p>
+    </div>
+  </div>
+  <div class="flex flex-col items-center gap-1">
+    <p class="text-text-primary">{{ chat.lastActive }}</p>
+    <div
+      class="w-8 h-8 grid place-items-center rounded-full bg-primary text-white"
+    >
+      {{ chat.unread }}
+    </div>
+  </div>
+</div>

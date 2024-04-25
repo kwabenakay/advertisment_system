@@ -1,0 +1,15 @@
+<div class="background">
+  <div
+    class="detail grid place-items-center h-screen"
+    [style]="getStyle()"
+    (mouseover)="handleMouserOver()"
+    (focus)="handleMouserOver()"
+    (mouseleave)="handleMouseLeave()"
+    (focus)="handleMouseLeave()"
+  >
+    <div class="p-4 text-center hover:cursor-default">
+      <h1 class="font-extrabold text-3xl">Page not found</h1>
+      <a routerLink="/" class="text-blue-500 underline">Go to landing page</a>
+    </div>
+  </div>
+</div>

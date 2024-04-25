@@ -1,0 +1,47 @@
+<div class="h-full bg-chat-bg">
+  <div class="flex h-20 px-8 justify-between items-center bg-chat-title">
+    <div class="flex gap-5">
+      <img
+        [src]="src || './../../../assets/images/default-profile.png'"
+        alt="profile"
+        class="h-12 w-12 rounded-full border"
+        />
+        <div>
+          <h2 class="font-semibold">{{ name }}</h2>
+          <p class="text-text-primary">operator</p>
+        </div>
+      </div>
+      <span> : </span>
+    </div>
+    <div class="h-[80vh] flex flex-col justify-between pb-4">
+      <div class=" p-6 gap-4 overflow-y-auto">
+        @if (selectedMessages$ | async; as messages) {
+          @for (data of messages.data; track data) {
+            @if (data.to) {
+              <div
+                class=" my-2 p-2 w-2/3 rounded-md shadow-md bg-yellow-100 self-start"
+                >
+                {{ data.to }}
+              </div>
+            }
+            @if (data.from) {
+              <div
+                class=" my-2 p-2 w-2/3 rounded-md shadow-md bg-green-200 ml-[30%] "
+                >
+                {{ data.from }}
+              </div>
+            }
+          }
+        }
+      </div>
+      <div class="py-5 px-5 bg-chat-title flex justify-between items-center">
+        <app-emoji-logo />
+        <app-attach-logo />
+        <div
+          class="bg-white rounded-full w-4/5 h-12 px-4 flex items-center justify-between shadow-md"
+          >
+          <input type="text" class="w-5/6 h-5/6 outline-none" /><app-send-logo />
+        </div>
+      </div>
+    </div>
+  </div>

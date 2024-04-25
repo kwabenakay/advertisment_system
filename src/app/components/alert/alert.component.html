@@ -1,0 +1,9 @@
+@if(alert$|async; as alert){ @if(alert.message){
+<div
+  class="grid place-items-center text-xl p-4 absolute top-10 left-1/2 -translate-x-1/2 min-w-96 min-h-10 rounded-md {{
+    alert.type === 'error' ? ' bg-red-300' : ' bg-green-300'
+  }}"
+>
+  {{ alert.message }}
+</div>
+} }

@@ -1,0 +1,47 @@
+<section>
+  <div #addButton class="text-text-primary bg-white px-20 pt-4 pb-2 flex gap-7">
+    <h3
+      class="hover:cursor-pointer"
+      [class]="isCampaignHistory ? 'text-primary font-bold underline' : ''"
+      (click)="setPage('campaignHistory')"
+      (keydown)="setPage('campaignHistory')"
+      tabindex="-1"
+    >
+      Campaing History
+    </h3>
+    <h3
+      class="hover:cursor-pointer"
+      [class]="isScheduleCapaign ? 'text-primary font-bold underline' : ''"
+      (click)="setPage('scehduleCampaign')"
+      (keydown)="setPage('scehduleCampaign')"
+      tabindex="-1"
+    >
+      Schedule Campaign
+    </h3>
+    <h3
+      class="hover:cursor-pointer"
+      [class]="isTemplates ? 'text-primary font-bold underline' : ''"
+      (click)="setPage('tamplates')"
+      (keydown)="setPage('tamplates')"
+      tabindex="-1"
+    >
+      Templates
+    </h3>
+    <h3
+      class="hover:cursor-pointer"
+      [class]="isCreateSegmant ? 'text-primary font-bold underline' : ''"
+      (click)="setPage('createSegment')"
+      (keydown)="setPage('createSegment')"
+      tabindex="-1"
+      tabindex="-1"
+    >
+      Create Segment
+    </h3>
+  </div>
+</section>
+
+@if (isCampaignHistory) {
+<app-campaign-history />
+}@else if (isScheduleCapaign) {
+<app-schedule-campaign />
+}

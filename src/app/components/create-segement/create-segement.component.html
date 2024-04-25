@@ -1,0 +1,59 @@
+<app-modal>
+  @if (!isDone) {
+  <div class="p-2 bg-white rounded-md max-h-[80vh] overflow-y-auto">
+    <div class="flex justify-end">
+      <app-close-logo
+        (click)="emitClose()"
+        (keydown)="emitClose()"
+        tabindex="0"
+      />
+    </div>
+    <div class="flex justify-between px-10 py-8">
+      <h3 class="text-primary font-semibold text-lg">Create Segments</h3>
+      <app-button
+        (click)="handleCreateSegment()"
+        (keydown)="handleCreateSegment()"
+        tabindex="0"
+      >
+        Create Segment
+      </app-button>
+    </div>
+    <div class="flex justify-between p-10 border-y">
+      <app-input
+        label="Segment Title"
+        name="segment-title"
+        placeholder="Enter title"
+        class="w-1/4"
+      />
+      <app-input
+        label="Filter by"
+        name="filter-by"
+        placeholder="Enter attribute"
+        [options]="['']"
+        class="w-1/4"
+      />
+      <app-input
+        label="Value"
+        name="value"
+        placeholder="Enter value"
+        class="w-1/4"
+      />
+    </div>
+    <div class="flex justify-between pl-8 pr-12">
+      <h3 class="text-primary font-semibold">Contacts</h3>
+      <div class="flex gap-4">
+        <app-button type="secondary"
+          >Import <app-port-logo type="import"
+        /></app-button>
+        <app-search />
+      </div>
+    </div>
+    <app-contacts-table />
+  </div>
+  } @else {
+  <app-completed-anime
+    [isDone]="isDone"
+    message="New segment has been created successfully"
+  />
+  }
+</app-modal>

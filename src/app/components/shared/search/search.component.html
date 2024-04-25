@@ -1,0 +1,13 @@
+<div
+  class="flex gap-4 items-center bg-white border-2 border-primary rounded-md overflow-clip pl-8"
+>
+  <app-search-logo />
+  <input
+    type="search"
+    placeholder="Search"
+    class="outline-none"
+    #searchInput
+    (input)="handleInput(searchInput.value)"
+  />
+  <span class="p-2 bg-primary"><app-search-options-logo /></span>
+</div>

@@ -1,0 +1,36 @@
+:root {
+  --anim-speed: 4s;
+  --bg-halfway: rgba(0, 128, 0, 0.404);
+}
+@keyframes smalldiv {
+  25% {
+    background-color: var(--bg-halfway);
+    color: green;
+  }
+
+  50% {
+    background-color: white;
+  }
+}
+
+@keyframes bigdiv {
+  25% {
+    background-color: var(--bg-halfway);
+    border-radius: 50px;
+    width: 180px;
+  }
+
+  50% {
+    background-color: green;
+    border-radius: 100px;
+  }
+}
+
+.small-div {
+  animation-name: smalldiv;
+  animation-duration: 2s;
+}
+.big-div {
+  animation-name: bigdiv;
+  animation-duration: 2s;
+}

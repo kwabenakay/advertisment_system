@@ -1,0 +1,24 @@
+<div class="bg-white flex justify-end items-center">
+  <div class="p-2 w-1/5 flex items-center justify-evenly">
+    <app-notification-logo></app-notification-logo>
+
+    <div class="flex justify-between">
+      <span>
+        <h3 class="font-bold">{{ userName }}</h3>
+        <p>{{ number }}</p>
+      </span>
+      <a
+        routerLink="/landing"
+        (click)="handleLogout()"
+        class="grid place-items-center mx-4 rounded-full h-10 w-10 overflow-clip"
+      >
+        <img
+          title="Profile"
+          [src]="src || './../../../assets/images/default-profile.png'"
+          alt="profile"
+          class="mx-4 rounded-full h-10 w-10"
+        />
+      </a>
+    </div>
+  </div>
+</div>

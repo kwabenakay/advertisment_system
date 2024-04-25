@@ -1,0 +1,17 @@
+<div class="bg-white">
+  <svg viewBox="0 0 600 400" #svg>
+    @for (key of keys(); track key) {
+    <rect
+      ry="10"
+      [attr.fill]="colors[$index % colors.length]"
+      [attr.x]="xValues()[$index]"
+      [attr.y]="yValues()[$index]"
+      [attr.width]="barWidth"
+      [attr.height]="heights()[$index]"
+    ></rect>
+    <text [attr.x]="xValues()[$index]" [attr.y]="yValues()[$index] - 5">
+      {{ key }}
+    </text>
+    }
+  </svg>
+</div>

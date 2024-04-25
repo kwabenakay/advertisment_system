@@ -1,0 +1,21 @@
+.btn {
+  position: relative;
+}
+.btn .tooltip {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  max-width: 60%;
+
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  z-index: 1;
+}
+
+.btn:hover .tooltip {
+  visibility: visible;
+}

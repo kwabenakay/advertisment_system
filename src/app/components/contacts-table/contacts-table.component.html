@@ -1,0 +1,46 @@
+<div class="flex gap-6 pl-6 pb-4">
+  <h3>Select all</h3>
+  <p class="text-text-primary">22 contacts</p>
+</div>
+<div class="text-center shadow-md">
+  <div
+    class="px-2 py-4 grid grid-cols-8 bg-white rounded-md shadow-md font-bold"
+  >
+    <h2>Name</h2>
+    <h2>Contact number</h2>
+    <h2>Created date</h2>
+    <h2 class="col-span-2">Attributes</h2>
+    <h2>Campaign</h2>
+    <h2>Edit</h2>
+    <h2>Delete</h2>
+  </div>
+
+  <!-- body    -->
+
+  @for (data of tableValues | async; track data; let i = $index) {
+  <div class="px-2 py-4 grid grid-cols-8 border-b">
+    <h2>{{ data.name }}</h2>
+    <h2>{{ data.contactNumber }}</h2>
+    <h2>{{ data.createdDate }}</h2>
+    <div class="text-center col-span-2 flex justify-center gap-3 flex-wrap">
+      <app-table-tiles />
+      <app-table-tiles />
+      <app-table-tiles />
+      <app-table-tiles />
+      <app-table-tiles />
+      <app-table-tiles />
+    </div>
+    <h2>{{ data.campaign }}</h2>
+    <span class="grid place-items-center"
+      ><app-edit-logo class="hover:cursor-pointer"
+    /></span>
+    <span class="grid place-items-center"
+      ><app-delete-logo
+        class="hover:cursor-pointer"
+        (click)="handleDelete([i])"
+        (keydown)="handleDelete([i])"
+        tabindex="0"
+    /></span>
+  </div>
+  }
+</div>

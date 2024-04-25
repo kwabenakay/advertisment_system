@@ -1,0 +1,22 @@
+<section class="mt-10 px-20">
+    <div class="flex justify-between">
+      <p class="font-bold">Overview</p>
+      <app-search />
+    </div>
+    <div class="grid grid-cols-5 mt-10">
+      <app-home-tile title="Sent" [count]="1" />
+      <app-home-tile title="Delivered" [count]="2" />
+      <app-home-tile title="Read" [count]="3" />
+      <app-home-tile title="Replied" [count]="3" />
+      <app-home-tile title="Failed." [count]="3" />
+    </div>
+  
+    <div class="flex justify-between mt-10 mb-5">
+      <h3 class="font-bold" >Broadcast List</h3>
+      <app-button>
+        <app-add-logo />
+        <p>New Campaign</p>
+      </app-button>
+    </div>
+    <app-campaign-table/>
+  </section>

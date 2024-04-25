@@ -1,0 +1,40 @@
+<div class="flex">
+  <div class="w-[40%] max-h-[90vh] overflow-y-auto">
+    <div
+      class="flex h-20 px-8 justify-between items-center bg-chat-title text-primary"
+    >
+      <h2 class="text-lg font-extrabold">Chats</h2>
+      <span>
+        <img src="./../../../assets/svg/search-log.svg" alt="" class="w-10" />
+      </span>
+    </div>
+    <div class="bg-white" #chatItem>
+      @for (chat of chats$ | async; track chat) {
+      <app-chat-tile
+        (click)="handleChatClick(chat)"
+        (keydown)="handleChatClick(chat)"
+        [chat]="chat"
+        [isActive]="selectedChat ? chat.id === selectedChat.id : false"
+      />
+      }
+    </div>
+  </div>
+  <div class="w-[60%]">
+    @if (isViewChat) { @defer (prefetch on interaction(chatItem)) {
+    <app-chat-detail
+      [selectedMessages$]="selectedMessages$"
+      [name]="selectedChat.name"
+    />
+    } } @else {
+    <div class="flex flex-col items-center justify-center h-[90vh] gap-4">
+      <img src="./../../../assets/images/no-chat.png" alt="" />
+      <div class="text-center">
+        <h2 class="text-lg font-bold">Click on any chat to view it</h2>
+        <p class="text-text-primary">
+          To read the message sent by user click on it
+        </p>
+      </div>
+    </div>
+    }
+  </div>
+</div>

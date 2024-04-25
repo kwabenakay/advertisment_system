@@ -1,0 +1,24 @@
+<div class="element h-screen w-screen grid place-items-center">
+  <form class="grid gap-6 w-96" [formGroup]="loginForm">
+    <img
+      src="./../assets/svg/megaphone.svg"
+      alt="personalised"
+      class="mx-auto mb-10"
+    />
+    <app-input
+      [isError]="emailError"
+      name="email"
+      label="Email"
+      [form]="loginForm"
+    />
+    <app-input
+      [isError]="passwordError"
+      name="password"
+      label="Password"
+      [form]="loginForm"
+    />
+    <app-button (click)="handleClick()" (keydown)="handleClick()" class="mt-5"
+      >Login</app-button
+    >
+  </form>
+</div>

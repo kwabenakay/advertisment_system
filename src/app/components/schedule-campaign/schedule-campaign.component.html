@@ -1,0 +1,22 @@
+<section class="mt-10 px-20">
+  <div class="flex justify-between">
+    <p class="font-bold">Overview</p>
+    <span class=" flex items-center gap-6">
+      <app-search />
+      <app-button>
+        <app-add-logo />
+        <p class=" py-0.5">Schedule New</p>
+      </app-button></span
+    >
+  </div>
+  <div class="grid grid-cols-4 gap-6 mt-10">
+    <app-campaign-tile title="tile" [title]="'Campaign Schedule'" [number]="20"/>
+    <app-campaign-tile title="tile" [title]="'Campaign Schedule'" [number]="20"/>
+    <app-campaign-tile title="tile" [title]="'Campaign Schedule'" [number]="20"/>
+  </div>
+
+  <!-- <div class="flex justify-between mt-10 mb-5">
+    <h3>Broadcast List</h3>
+  </div> -->
+  <!-- <app-campaign-table/> -->
+</section>

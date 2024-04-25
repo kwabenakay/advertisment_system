@@ -1,0 +1,32 @@
+<div class="shadow-md rounded-md overflow-hidden">
+  <div
+    class="grid grid-cols-9 justify-evenly bg-white text-text-primary py-2 px-4 shadow-sm"
+  >
+    <p>Title</p>
+    <p>Date</p>
+    <p>Time</p>
+    <p>Read</p>
+    <p>Sent</p>
+    <p>Replied</p>
+    <p>Failed</p>
+    <p>Reciepts</p>
+    <p class="text-center">Actions</p>
+  </div>
+
+  <div
+    class="grid grid-cols-9 justify-evenly bg-page-background text-text-primary p-4"
+  >
+    <p>Title 02-03-2023</p>
+    <p>02/03/2023</p>
+    <p>02:30 PM</p>
+    <app-read [isActive]="true" />
+    <app-sent [isActive]="true" />
+    <app-replied [isActive]="true" />
+    <app-failed [isActive]="true" />
+    <p>12 Contacts</p>
+    <p class="flex gap-4 justify-center">
+      <img src="./../../../assets/svg/bars-actions.svg" alt="." />
+      <img src="./../../../assets/svg/eye-actions.svg" alt="." />
+    </p>
+  </div>
+</div>
