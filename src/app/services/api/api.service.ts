@@ -9,6 +9,7 @@ import {
 } from '../../store/store.state';
 import { LoginData } from '../../app';
 import { AuthService } from '../auth/auth.service';
+import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ import { AuthService } from '../auth/auth.service';
 export class ApiService {
   private http: HttpClient = inject(HttpClient);
   private auth = inject(AuthService);
-  private BASE_URL = 'http://localhost:3000';
+  private BASE_URL = environment.BASE_API;
 
   getToken() {
     const token = this.auth.getUserData().token;
