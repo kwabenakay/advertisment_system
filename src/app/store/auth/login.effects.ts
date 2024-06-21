@@ -1,10 +1,10 @@
 import { Injectable, inject } from '@angular/core';
-import { ApiService } from '../../services/api/api.service';
+import { ApiService } from '../../shared/api-service/api.service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as authAction from './login.actions';
 import { catchError, exhaustMap, map, of } from 'rxjs';
-import { AlertService } from '../../services/alert/alert.service';
-import { AuthService } from '../../services/auth/auth.service';
+import { AlertService } from '../../shared/alert-service/alert.service';
+import { AuthService } from '../../authenticated/auth/auth.service';
 import { Router } from '@angular/router';
 import { Login } from '../store.state';
 import { Res } from '../../app.interface';

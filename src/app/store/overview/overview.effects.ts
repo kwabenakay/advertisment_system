@@ -1,9 +1,9 @@
 import { Injectable, inject } from '@angular/core';
-import { ApiService } from '../../services/api/api.service';
+import { ApiService } from '../../shared/api-service/api.service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as opteratorActions from './overview.actions';
 import { catchError, exhaustMap, map, of } from 'rxjs';
-import { AlertService } from '../../services/alert/alert.service';
+import { AlertService } from '../../shared/alert-service/alert.service';
 @Injectable()
 export class OverviewEffect {
   private apiService: ApiService = inject(ApiService);

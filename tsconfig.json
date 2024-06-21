@@ -22,7 +22,23 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "@service/*": ["app/service/*"],
+      "@type/*": ["app/types/*"],
+      "@modals/*": ["app/components/modal/*"],
+      "@component/*": ["app/component/*"],
+      "@chats/*": ["app/chats/*"],
+      "@authenticated/*": ["app/authenticated/*"],
+      "@campaign/*": ["app/campaign/*"],
+      "@contacts/*": ["app/contacts/*"],
+      "@home/*": ["app/home/*"],
+      "@shared/*": ["app/shared/*"],
+      "@icons/*": ["app/custom-icons/*"],
+      "@store/*": ["app/store/*"],
+      "@app/*": ["app/*"]
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { ApiService } from '../../services/api/api.service';
+import { ApiService } from '../../shared/api-service/api.service';
 import * as messagesAction from './messages.actions';
 import { exhaustMap, map } from 'rxjs';
 

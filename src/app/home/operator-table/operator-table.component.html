@@ -1,0 +1,35 @@
+<div class="w-full shadow-md">
+  <h2 class="font-extrabold text-xl text-text-primary my-2">
+    List of operators
+  </h2>
+  <div
+    class="py-2 w-full bg-white text-text-primary text-left grid grid-cols-2"
+  >
+    <p class="col-span-1 pl-14">Name</p>
+    <p class="col-span-1 pl-6">Platform</p>
+  </div>
+  @if (operators$ | async; as operators) { @for ( operator of operators |
+  paginate : { itemsPerPage: itemsPerPage, currentPage: page } ; track operator)
+  {
+  <div class="grid grid-cols-2">
+    <div class="col-span-1 text-primary font-bold p-3 flex items-center gap-6">
+      <img
+        src="./../../../assets/images/default-profile.png"
+        alt="profile"
+        class="w-10 h-10 rounded-full border"
+      />
+      {{ operator.name }}
+    </div>
+    <div class="col-span-1 p-3 pr-9 flex justify-between items-center gap-6">
+      <span class="text-text-primary">{{ operator.platform }}</span>
+      <span class="bg-white p-2 rounded-md shadow-md"
+        ><app-ellipses class="text-primary"
+      /></span>
+    </div>
+  </div>
+  }
+  <div class="grid place-items-center">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+  }
+</div>

@@ -24,25 +24,29 @@ import { messageReducer } from './store/messages/messages.reducers';
 import { MessagesEffect } from './store/messages/messages.effects';
 import { LoginEffects } from './store/auth/login.effects';
 
+const appReducers = {
+  count: contactReducers,
+  conversations: conversationReducers,
+  contacts: contactReducers,
+  operators: operatorsReducers,
+  overview: overviewReducers,
+  chats: chatReducer,
+  messages: messageReducer,
+};
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom([NgxPaginationModule]),
     provideHttpClient(withInterceptorsFromDi()),
     provideRouter(routes),
-    provideStore(),
-    provideState({ name: 'count', reducer: countReducers }),
-    provideState({ name: 'conversations', reducer: conversationReducers }),
-    provideState({ name: 'contacts', reducer: contactReducers }),
-    provideState({ name: 'operators', reducer: operatorsReducers }),
-    provideState({ name: 'overview', reducer: overviewReducers }),
-    provideState({ name: 'chats', reducer: chatReducer }),
-    provideState({ name: 'messages', reducer: messageReducer }),
-    provideEffects(ConversationEffects),
-    provideEffects(ContactsEffect),
-    provideEffects(OperatorEffects),
-    provideEffects(OverviewEffect),
-    provideEffects(ChatsEffects),
-    provideEffects(MessagesEffect),
-    provideEffects(LoginEffects),
+    provideStore(appReducers),
+    provideEffects(
+      ConversationEffects,
+      ContactsEffect,
+      OperatorEffects,
+      OverviewEffect,
+      ChatsEffects,
+      MessagesEffect,
+      LoginEffects
+    ),
   ],
 };

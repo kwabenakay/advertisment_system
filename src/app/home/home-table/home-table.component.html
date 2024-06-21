@@ -1,0 +1,39 @@
+<div>
+  <h3>Top Conversations</h3>
+  <div class="my-5 shadow-md">
+    <!-- Title  -->
+    <div
+      class="text-text-primary bg-white grid grid-cols-8 text-center py-2 px-4 rounded-md shadow-md"
+      >
+      <p>Template Title</p>
+      <p>Sent Day</p>
+      <p>Category</p>
+      <p>Recipients</p>
+      <p>No of clicks</p>
+      <p>Actions</p>
+      <p>Edit</p>
+      <p>Share</p>
+    </div>
+    <!-- Body -->
+    <div class="py-2 px-4">
+      @for (conversation of topConversations$ | async; track conversation) {
+        <div
+          class="grid grid-cols-8 text-center py-2"
+          >
+          <p>{{ conversation.TemplateTitle }}</p>
+          <p>{{ conversation.SentDay }}</p>
+          <p>{{ conversation.Category }}</p>
+          <p>{{ conversation.Recipients }} Recipients</p>
+          <p>{{ conversation.NoOfClicks }}</p>
+          <p>{{ conversation.Actions }}</p>
+          <span class="grid place-items-center"
+            ><app-edit-logo class="hover:cursor-pointer"
+          /></span>
+          <span class="grid place-items-center"
+            ><app-share-logo class="hover:cursor-pointer"
+          /></span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

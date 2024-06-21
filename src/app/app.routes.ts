@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { authGuard } from './grauds/auth.guard';
+import { authGuard } from './authenticated/auth-grauds/auth.guard';
 
 export const routes: Routes = [
   {
@@ -10,28 +10,28 @@ export const routes: Routes = [
   {
     path: 'landing',
     loadComponent: () =>
-      import('./pages/landing/landing.component').then(
+      import('./landing/landing.component').then(
         (landingComponent) => landingComponent.LandingComponent
       ),
   },
   {
     path: 'login',
     loadComponent: () =>
-      import('./pages/login/login.component').then(
+      import('./login/login.component').then(
         (loginComponent) => loginComponent.LoginComponent
       ),
   },
   {
     path: 'register',
     loadComponent: () =>
-      import('./pages/register/register.component').then(
+      import('./register/register.component').then(
         (registerComponent) => registerComponent.RegisterComponent
       ),
   },
   {
     path: 'auth',
     loadComponent: () =>
-      import('./pages/authenticated/authenticated.component').then(
+      import('@app/authenticated/authenticated.component').then(
         (authenticatedComponent) =>
           authenticatedComponent.AuthenticatedComponent
       ),
@@ -40,35 +40,35 @@ export const routes: Routes = [
       {
         path: 'home',
         loadComponent: () =>
-          import('./pages/home/home.component').then(
+          import('@home/home.component').then(
             (homeComponent) => homeComponent.HomeComponent
           ),
       },
       {
         path: 'contacts',
         loadComponent: () =>
-          import('./pages/contacts/contacts.component').then(
+          import('@contacts/contacts.component').then(
             (contactsComponent) => contactsComponent.ContactsComponent
           ),
       },
       {
         path: 'chats',
         loadComponent: () =>
-          import('./pages/chats/chats.component').then(
+          import('@chats/chats.component').then(
             (chatsComponent) => chatsComponent.ChatsComponent
           ),
       },
       {
         path: 'campaign',
         loadComponent: () =>
-          import('./pages/campaign/campaign.component').then(
+          import('@campaign/campaign.component').then(
             (campaignComponent) => campaignComponent.CampaignComponent
           ),
       },
       {
         path: 'counter',
         loadComponent: () =>
-          import('./counter-page/counter-page.component').then(
+          import('@app/counter-page/counter-page.component').then(
             (homeComponent) => homeComponent.CounterPageComponent
           ),
       },
@@ -77,7 +77,7 @@ export const routes: Routes = [
   {
     path: '**',
     loadComponent: () =>
-      import('./pages/not-found/not-found.component').then(
+      import('@app/not-found/not-found.component').then(
         (noFoundComponent) => noFoundComponent.NotFoundComponent
       ),
   },
