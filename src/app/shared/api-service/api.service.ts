@@ -17,7 +17,7 @@ import { environment } from 'environments/environment';
 export class ApiService {
   private http: HttpClient = inject(HttpClient);
   private auth = inject(AuthService);
-  private BASE_URL = environment.BASE_API;
+  private BASE_URL = 'https://test-yk1z.onrender.com';
 
   getToken() {
     const token = this.auth.getUserData().token;
