@@ -9,7 +9,6 @@ import {
 } from '../../store/store.state';
 import { LoginData } from '../../app';
 import { AuthService } from '../../authenticated/auth/auth.service';
-import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root',
