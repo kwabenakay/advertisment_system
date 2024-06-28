@@ -6,6 +6,7 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AlertService } from '@shared/alert-service/alert.service';
 import { ButtonComponent } from '@shared/button/button.component';
@@ -17,7 +18,7 @@ import { triggerRegister } from '@store/auth/login.actions';
   standalone: true,
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
-  imports: [InputComponent, ButtonComponent, ReactiveFormsModule],
+  imports: [InputComponent, ButtonComponent, ReactiveFormsModule, RouterLink],
 })
 export class RegisterComponent {
   private builder = inject(FormBuilder);

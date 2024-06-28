@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { InputComponent } from '@shared/input/input.component';
 import { ButtonComponent } from '@shared/button/button.component';
 import { AuthService } from '@authenticated/auth/auth.service';
@@ -15,7 +15,7 @@ import { triggerLogin } from '@store/auth/login.actions';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [InputComponent, ReactiveFormsModule, ButtonComponent],
+  imports: [InputComponent, ReactiveFormsModule, ButtonComponent, RouterLink],
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   private store = inject(Store);
   private authService = inject(AuthService);
   private router = inject(Router);
-  public loginForm: FormGroup=this.builder.group({
+  public loginForm: FormGroup = this.builder.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
   });
